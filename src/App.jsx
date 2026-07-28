@@ -57,7 +57,10 @@ body { font-family: 'Plus Jakarta Sans', sans-serif; background: #070d1a; color:
   position:sticky; top:0; height:100vh; overflow-y:auto;
 }
 .main-area { flex:1; min-width:0; overflow-x:hidden; }
-.page { padding: 2rem; max-width: 1100px; }
+.page {
+  padding: 2rem;
+  max-width: 1100px;
+}
 
 /* Sidebar */
 .sb-logo {
@@ -190,9 +193,43 @@ tr:hover td { background:var(--navy-800);color:var(--text); }
 .toast-error   { background:#7f1d1d;border:1px solid #ef444440;color:#fecaca; }
 
 /* Modal */
-.modal-overlay { position:fixed;inset:0;background:rgba(7,13,26,.8);backdrop-filter:blur(6px);z-index:500;display:flex;align-items:center;justify-content:center;padding:1.5rem; }
-.modal { background:var(--navy-800);border:1px solid var(--border-2);border-radius:20px;padding:2rem;width:100%;max-width:600px;max-height:90vh;overflow-y:auto;animation:fadeIn .25s ease both; }
-.modal-header { display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem; }
+.modal-overlay { 
+  position:fixed;
+  top:0; left:0; right:0; bottom:0;
+  width:100vw; height:100vh;
+  background:rgba(7,13,26,.85);
+  backdrop-filter:blur(6px);
+  z-index:1000;
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  padding:2rem 1.5rem;
+  overflow-y:auto;
+  margin-left:-260px;
+}
+.modal { 
+  background:var(--navy-800);
+  border:1px solid var(--border-2);
+  border-radius:20px;
+  padding:2rem;
+  width:100%;
+  max-width:600px;
+  margin:auto;
+  flex-shrink:0;
+  animation:fadeIn .25s ease both;
+}
+.modal-header { 
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:1.5rem;
+  position:sticky;
+  top:-2rem;
+  background:var(--navy-800);
+  z-index:10;
+  padding:1rem 0;
+  border-bottom:1px solid var(--border);
+}
 .modal-title { font-size:1.15rem;font-weight:700; }
 .modal-close { background:none;border:none;color:var(--text-3);cursor:pointer;padding:.35rem;border-radius:8px;transition:all .15s;display:flex; }
 .modal-close:hover { background:var(--navy-700);color:var(--text); }
